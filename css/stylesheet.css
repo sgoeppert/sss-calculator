@@ -139,7 +139,7 @@ select {
 	background-color: #454a45;
 
 	color: #e2e2e2;
-	background-image:url(./icons/arrow.png);
+	background-image:url(../icons/arrow.png);
 	background-position: left;
 	background-position: 5px;
 	background-size: 12px;
@@ -427,7 +427,7 @@ input::-webkit-inner-spin-button {
 	background-color: #454a45;
 
 	color: #e2e2e2;
-	background-image:url(./icons/arrow.png);
+	background-image:url(../icons/arrow.png);
 	background-position: left;
 	background-position: 10px;
 	background-size: 25px;
