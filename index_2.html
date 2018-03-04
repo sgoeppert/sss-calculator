@@ -1,212 +1,220 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Final Fantasy XIV Stone Sky Sea Calculator</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/stylesheet.css">
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- FAVICON -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Stylesheets -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="/css/stylesheet_new.css">
 </head>
 
 <body>
-	<div class="filler">
 
-		<div class="container">
-			<h1>Stone, Sky, Sea DPS Calculator</h1>
-			<hr>
-			<p>Select your Class: </p>
-			<div class="jobselect">
+	<header>
+		<div id="logo">
+			<a href="#">
+				<img src="/images/logo.svg" alt="Logo">
+			</a>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="https://github.com/sgoeppert/sss-calculator">
+						<i class="fab fa-github"></i> Source Code</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/shadex91">
+						<i class="fab fa-twitter"></i> Contact Me</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container light">
+		<h1>Stone, Sky, Sea DPS Calculator</h1>
+		<section id="jobs">
+			<h2>Select your class:</h2>
+			<div class="jobselect table bottom">
 				<div>
-					<input id="job1" value="Paladin" type="radio" name="job">
-					<label for="job1" id="pld">
+					<label>
+						<input value="Paladin" type="radio" name="job">
 						<img src="icons/pld_ico.png">
 					</label>
-					<br>
-					<input id="job2" value="Warrior" type="radio" name="job">
-					<label for="job2" id="war">
+					<label>
+						<input value="Warrior" type="radio" name="job">
 						<img src="icons/war_ico.png">
 					</label>
-					<br>
-					<input id="job3" value="Dark Knight" type="radio" name="job">
-					<label for="job3" id="drk">
+					<label>
+						<input value="Dark Knight" type="radio" name="job">
 						<img src="icons/drk_ico.png">
 					</label>
 				</div>
 				<div>
-					<input id="job4" value="Dragoon" type="radio" name="job">
-					<label for="job4" id="drg">
+					<label>
+						<input value="Dragoon" type="radio" name="job">
 						<img src="icons/drg_ico.png">
 					</label>
-					<br>
-					<input id="job5" value="Monk" type="radio" name="job">
-					<label for="job5" id="mnk">
+					<label>
+						<input value="Monk" type="radio" name="job">
 						<img src="icons/mnk_ico.png">
 					</label>
-					<br>
-					<input id="job6" value="Ninja" type="radio" name="job">
-					<label for="job6" id="nin">
+					<label>
+						<input value="Ninja" type="radio" name="job">
 						<img src="icons/nin_ico.png">
 					</label>
-					<br>
-					<input id="job14" value="Samurai" type="radio" name="job">
-					<label for="job14" id="sam">
+					<label>
+						<input value="Samurai" type="radio" name="job">
 						<img src="icons/sam_ico.png">
 					</label>
 				</div>
 				<div>
-					<input id="job7" value="Blackmage" type="radio" name="job">
-					<label for="job7" id="blm">
+					<label>
+						<input value="Blackmage" type="radio" name="job">
 						<img src="icons/blm_ico.png">
 					</label>
-					<br>
-					<input id="job8" value="Summoner" type="radio" name="job">
-					<label for="job8" id="smn">
+					<label>
+						<input value="Summoner" type="radio" name="job">
 						<img src="icons/smn_ico.png">
 					</label>
-					<br>
-					<input id="job15" value="Redmage" type="radio" name="job">
-					<label for="job15" id="rdm">
+					<label>
+						<input value="Redmage" type="radio" name="job">
 						<img src="icons/rdm_ico.png">
 					</label>
 				</div>
 				<div>
-					<input id="job9" value="Bard" type="radio" name="job">
-					<label for="job9" id="brd">
+					<label>
+						<input value="Bard" type="radio" name="job">
 						<img src="icons/brd_ico.png">
 					</label>
-					<br>
-					<input id="job10" value="Machinist" type="radio" name="job">
-					<label for="job10" id="mch">
+					<label>
+						<input value="Machinist" type="radio" name="job">
 						<img src="icons/mch_ico.png">
 					</label>
 				</div>
 				<div>
-					<input id="job11" value="Whitemage" type="radio" name="job">
-					<label for="job11" id="whm">
+					<label>
+						<input value="Whitemage" type="radio" name="job">
 						<img src="icons/whm_ico.png">
 					</label>
-					<br>
-					<input id="job12" value="Scholar" type="radio" name="job">
-					<label for="job12" id="sch">
+					<label>
+						<input value="Scholar" type="radio" name="job">
 						<img src="icons/sch_ico.png">
 					</label>
-					<br>
-					<input id="job13" value="Astrologian" type="radio" name="job">
-					<label for="job13" id="ast">
+					<label>
+						<input value="Astrologian" type="radio" name="job">
 						<img src="icons/ast_ico.png">
 					</label>
 				</div>
 			</div>
-
-			<div class="dummytext hidesmall">
-				The dummy has 0 HP
+		</section>
+		<section id="fights">
+			<h2>Select the fight:</h2>
+			<select id="fight" onchange="calcHP()">
+				<optgroup label="Sigmascape">
+					<option value="O5S">Sigmascape V1.0 (Savage)</option>
+					<option value="O6S">Sigmascape V2.0 (Savage)</option>
+					<option value="O7S">Sigmascape V3.0 (Savage)</option>
+					<option value="O8S">Sigmascape V4.0 (Savage)</option>
+				</optgroup>
+				<optgroup label="Trial">
+					<option>Shinryu EX</option>
+					<option>Byakko EX</option>
+				</optgroup>
+				<optgroup label="Deltascape">
+					<option value="O1S">Deltascape V1.0 (Savage)</option>
+					<option value="O2S">Deltascape V2.0 (Savage)</option>
+					<option value="O3S">Deltascape V3.0 (Savage)</option>
+					<option value="O4S">Deltascape V4.0 (Savage)</option>
+				</optgroup>
+				<optgroup label="Level 70">
+					<option value="Shinryu">The Royal Menagerie</option>
+					<option>Lakshmi</option>
+					<option>Susano</option>
+					<option>Omega</option>
+					<option>Sigmascape</option>
+				</optgroup>
+				<optgroup label="Creator">
+					<option>Creator</option>
+					<option value="A9S">The Eyes of the Creator (Savage)</option>
+					<option value="A10S">The Breath of the Creator (Savage)</option>
+					<option value="A11S">The Heart of the Creator (Savage)</option>
+					<option value="A12S">The Soul of the Creator (Savage)</option>
+				</optgroup>
+				<optgroup label="Trial">
+					<option>Bismarck EX</option>
+					<option>Thordan EX</option>
+					<option>Sephirot EX</option>
+					<option>Nidhogg EX</option>
+					<option>Sophia EX</option>
+					<option>Zurvan EX</option>
+				</optgroup>
+				<optgroup label="Midas">
+					<option>Midas</option>
+					<option value="A5S">The Fist of the Son (Savage)</option>
+					<option value="A6S">The Cuff of the Son (Savage)</option>
+					<option value="A7S">The Arm of the Son (Savage)</option>
+					<option value="A8S">The Burden of the Son (Savage)</option>
+				</optgroup>
+				<optgroup label="Gordias">
+					<option>Gordias</option>
+					<option value="A1S">The Fist of the Father (Savage)</option>
+					<option value="A2S">The Cuff of the Father (Savage)</option>
+					<option value="A3S">The Arm of the Father (Savage)</option>
+					<option value="A4S">The Burden of the Father (Savage)</option>
+				</optgroup>
+				<option>Basic</option>
+			</select>
+		</section>
+		<section id="data-input">
+			<p>Fight the training dummy. Remember the remaining time if you can beat it, or the remaining HP if you can't.</p>
+			<div>
+				<label for="hpInput">Remaining HP: </label>
+				<input type="number" id="hpInput">
+				<label for="timeInput">Remaining Time: </label>
+				<input type="number" id="timeInput">
 			</div>
+			<button type="button" onclick="calcDPS()">Calculate</button>
+		</section>
+		<section id="result">
+			<h2 id="dpsValue">You have reached 0 DPS</h2>
+		</section>
+		<section id="help">
+			<p>If there is any fight data missing please submit it
+				<a href="https://goo.gl/forms/jmIqkVj7gzuILFdC3" target="_blank">via this form</a>
+			</p>
 
-			<div class="fightselect">
+			<h3>If you have trouble:</h3>
+			To use this calculator you will need to know the remaining HP and the remaining time of the trial:
+			<br>
+			<img src="images/remainingHP.jpg" id="hpscreen">
+			<img src="images/remainingTime.jpg" id="timescreen"> To be able to see the HP go to "Character Configuration" -> "UI Settings" and check "Display target's remaining HP percentage".
 
-
-				<p>Select the fight: </p>
-				<select id="fight" onchange="calcHP()">
-					<optgroup label="Sigmascape">
-						<option value="O5S">Sigmascape V1.0 (Savage)</option>
-						<option value="O6S">Sigmascape V2.0 (Savage)</option>
-						<option value="O7S">Sigmascape V3.0 (Savage)</option>
-						<option value="O8S">Sigmascape V4.0 (Savage)</option>
-					</optgroup>
-					<optgroup label="Trial">
-						<option>Shinryu EX</option>
-						<option>Byakko EX</option>
-					</optgroup>
-					<optgroup label="Deltascape">
-						<option value="O1S">Deltascape V1.0 (Savage)</option>
-						<option value="O2S">Deltascape V2.0 (Savage)</option>
-						<option value="O3S">Deltascape V3.0 (Savage)</option>
-						<option value="O4S">Deltascape V4.0 (Savage)</option>
-					</optgroup>
-					<optgroup label="Level 70">
-						<option value="Shinryu">The Royal Menagerie</option>
-						<option>Lakshmi</option>
-						<option>Susano</option>
-						<option>Omega</option>
-						<option>Sigmascape</option>
-					</optgroup>
-					<optgroup label="Creator">
-						<option>Creator</option>
-						<option value="A9S">The Eyes of the Creator (Savage)</option>
-						<option value="A10S">The Breath of the Creator (Savage)</option>
-						<option value="A11S">The Heart of the Creator (Savage)</option>
-						<option value="A12S">The Soul of the Creator (Savage)</option>
-					</optgroup>
-					<optgroup label="Trial">
-						<option>Bismarck EX</option>
-						<option>Thordan EX</option>
-						<option>Sephirot EX</option>
-						<option>Nidhogg EX</option>
-						<option>Sophia EX</option>
-						<option>Zurvan EX</option>
-					</optgroup>
-					<optgroup label="Midas">
-						<option>Midas</option>
-						<option value="A5S">The Fist of the Son (Savage)</option>
-						<option value="A6S">The Cuff of the Son (Savage)</option>
-						<option value="A7S">The Arm of the Son (Savage)</option>
-						<option value="A8S">The Burden of the Son (Savage)</option>
-					</optgroup>
-					<optgroup label="Gordias">
-						<option>Gordias</option>
-						<option value="A1S">The Fist of the Father (Savage)</option>
-						<option value="A2S">The Cuff of the Father (Savage)</option>
-						<option value="A3S">The Arm of the Father (Savage)</option>
-						<option value="A4S">The Burden of the Father (Savage)</option>
-					</optgroup>
-					<option>Basic</option>
-				</select>
-			</div>
-
-			<div class="dummytext hidelarge">
-				<h2>The dummy has 0 HP</h2>
-			</div>
-			<hr>
-			<div class="hptimeinput">
-				Fight the training dummy and remember the remaining HP if you can't beat it in time, or the time left if you manage to kill
-				it. Enter either value below.
-				<br>
-				<div>
-					<p>Remaining HP</p>
-					<input type="number" value="0" min="0" max="100" id="remhp" onchange="clearRemTime()">%
-				</div>
-				<div>
-					<p>Remaining Time</p>
-					<input type="number" value="0" min="0" max="180" id="remtime" onchange="clearRemHP()">s
-				</div>
-			</div>
-			<hr>
-
-			<div class="results">
-				<button type="button" onclick="calcDPS()">Calculate</button>
-				<h2 id="dpsValue">You have reached 0 DPS</h2>
-			</div>
-
-			<hr>
-			<div class="infodiv">
-				<p class="thanks">If there is any fight data missing please submit it
-					<a href="https://goo.gl/forms/jmIqkVj7gzuILFdC3" target="blank">via this form</a>
-				</p>
-
-				<p>If you have trouble:</p>
-				To use this calculator you will need to know the remaining HP and the remaining time of the trial:
-				<br>
-				<img src="./images/remainingHP.jpg" id="hpscreen">
-				<img src="./images/remainingTime.jpg" id="timescreen">
-				<br> To be able to see the HP go to "Character Configuration" -> "UI Settings" and check "Display target's remaining HP percentage".
-				<br>
-				<img src="./images/settings.jpg" id="settingsscreen">
-				<p class="thanks">Thank you to /u/xephero in the
-					<a href="https://www.reddit.com/r/ffxiv/comments/54vy4y/updated_sss_stats_hp_and_dps_requirements_for/"
-					 target="blank">ffxiv subreddit</a> for providing this data.</p>
-			</div>
-		</div>
+			<img src="images/settings.jpg" id="settingsscreen">
+		</section>
 	</div>
+
+	<footer>
+		<p>
+			Thank you to /u/xephero in the
+			<a href="https://www.reddit.com/r/ffxiv/comments/54vy4y/updated_sss_stats_hp_and_dps_requirements_for/" target="_blank">ffxiv subreddit</a>
+			for providing this data.
+		</p>
+		Copyright &copy; 2018 Stefan Göppert
+	</footer>
+
 	<script src="jquery-2.2.1.js"></script>
 
 	<script>
@@ -338,11 +346,11 @@
 
 	</script>
 	<script>
-		(function (i, s, o, g, r, a, m) {		
-i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-			(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date(); a = s.createElement(o),
-			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
 		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 		ga('create', 'UA-78794917-1', 'auto');

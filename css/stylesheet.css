@@ -289,10 +289,19 @@ input::-webkit-inner-spin-button {
 		width: 90%;
 	}
 
-	div.results {
+	/* div.results {
 		padding: 40px;
 		font-size: 1.4em;
 		height: 100px;
+		width: 90%;
+		text-align: center;
+	} */
+
+	
+	div.results {
+		font-size: 1.4em;
+		padding: 10px 0;
+		margin: auto;
 		width: 90%;
 		text-align: center;
 	}
@@ -319,8 +328,8 @@ input::-webkit-inner-spin-button {
 
 	div.container {
 		width: 90%;
-
-		padding: 20px;
+		max-width: 650px;
+		padding: 10px;
 	}
 
 	div.hptimeinput {
@@ -351,9 +360,10 @@ input::-webkit-inner-spin-button {
 
 
 	img#hpscreen, img#timescreen {
-		height: 80px;
+		width: 90%;
+		height: auto;
 		display: inline-block;
-		margin: 20px;
+		margin: 0 5% 10px 5%;
 	}
 
 	img#settingsscreen {

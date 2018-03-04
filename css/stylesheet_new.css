@@ -1,0 +1,148 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	/* background-color: #6d6c6c; */
+	background-color: #39686d;
+	padding: 0;
+	margin: 0;
+
+	color: #494949;
+	font-size: 16px;
+}
+
+header, footer {
+	background-color: #ffffff;
+	width: 100%;
+	color: #494949;
+	text-align: center;
+}
+
+header {
+	height: 40px;
+	margin-bottom: 20px;
+
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	-o-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+}
+
+footer {
+	padding: 5px 0;
+	margin-top: 20px;
+	font-size: 14px;
+	font-size: 0.8rem;
+
+	box-shadow: 0px -1px 3px rgba(0,0,0,0.1);
+	-o-box-shadow: 0px -1px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px -1px 3px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px -1px 3px rgba(0,0,0,0.1);
+}
+
+.fab {
+	font-size: 1.5em;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	color: #494949;
+}
+
+#logo {
+	float: left;
+	height: 40px;
+	margin-left: 50px;
+
+	padding: 0;
+}
+
+#logo img, #logo svg {
+  height: 100%;
+}
+
+header nav {
+  float: right;
+	margin: 0px 50px 0 0;
+}
+
+header nav ul {
+	padding: 0;
+}
+
+header nav ul li {
+	list-style-type: none;
+	float: left;
+	margin-left: 20px;
+	margin-top: -5px;
+}
+
+.light {
+	background-color: #ffffff;
+	border: 1px solid  #eeeeee;
+	color: #494949;
+}
+
+.dark {
+	background-color: #2b2b2b;
+	border: 1px solid #6d6c6c;
+	color: #f0f0f0;
+}
+
+.container {
+	padding: 0 20px;
+	width: 70%;
+	max-width: 800px;
+	margin: 0 auto;
+
+	box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
+}
+
+section {
+	width: 100%;
+}
+/* section:nth-of-type(2n) {
+	background-color: #f0f0f0;
+} */
+
+section:after {
+	content: " ";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0px;
+}
+
+.table { display: table;}
+.table > div { display: table-cell; }
+.table.bottom > div { vertical-align: bottom; }
+
+.jobselect {
+	margin: 0 auto;
+}
+
+.jobselect div label {
+	display: block;
+	margin: 0 10px 10px 0;
+}
+
+input[type=radio] {
+	display: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+input[type=radio] + img {
+	border-radius: 12px;
+	border: 3px solid;
+}
+
+input[type=radio]:checked + img {
+	transform: scale(1.1);
+	border-color: rgb(102, 166, 250);
+
+}
+
+input[type=radio]:hover + img {
+	transform: scale(1.1);
+}
