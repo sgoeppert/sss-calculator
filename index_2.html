@@ -7,19 +7,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- FAVICON -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#2b5797">
 	<meta name="theme-color" content="#ffffff">
 	<!-- Stylesheets -->
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="/css/stylesheet_new.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/stylesheet_new.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<header>
 		<div id="logo">
 			<a href="#">
-				<img src="/images/logo.svg" alt="Logo">
+				<img src="images/logo.svg" alt="Logo">
 			</a>
 		</div>
 		<nav>
@@ -182,9 +182,9 @@
 			<p>Fight the training dummy. Remember the remaining time if you can beat it, or the remaining HP if you can't.</p>
 			<div>
 				<label for="hpInput">Remaining HP: </label>
-				<input type="number" id="hpInput">
+				<input type="number" id="hpInput" onchange="clearRemTime()" value="0" min="0" max="100">
 				<label for="timeInput">Remaining Time: </label>
-				<input type="number" id="timeInput">
+				<input type="number" id="timeInput" onchange="clearRemHP()" value="0" min="0" max="180">
 			</div>
 			<button type="button" onclick="calcDPS()">Calculate</button>
 		</section>
@@ -297,19 +297,16 @@
 		}
 
 		function clearRemTime() {
-			$("#remtime").val(0);
+			$("#timeInput").val(0);
 		}
 
 		function clearRemHP() {
-			$("#remhp").val(0);
+			$("#hpInput").val(0);
 		}
 
 		function updateSelected() {
 			klasse = $('input[name="job"]:checked').val();
-
-
 			fight = $("#fight option:selected").val();
-
 		}
 
 		function calcHP() {
@@ -320,8 +317,8 @@
 
 		function calcDPS() {
 			updateSelected();
-			var remHP = $("#remhp").val();
-			var remTime = $("#remtime").val();
+			var remHP = $("#hpInput").val();
+			var remTime = $("#timeInput").val();
 
 			var dpsText = "";
 			if (typeof klasse != 'undefined') {
@@ -333,7 +330,6 @@
 				if (bossHP != 0) {
 					var dps = (1 - (remHP * 0.01)) * bossHP / (maxTime - remTime)
 					dpsText = "You have reached: " + dps.toFixed(2).toString() + " DPS";
-
 				} else {
 					dpsText = "No HP values available for " + klasse + " - " + fight;
 				}
