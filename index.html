@@ -106,7 +106,7 @@
 
 
 				<p>Select the fight: </p>
-				<select id="fight" onchange="calcHP()">
+				<select id="fight">
 					<optgroup label="Sigmascape">
 						<option value="O5S">Sigmascape V1.0 (Savage)</option>
 						<option value="O6S">Sigmascape V2.0 (Savage)</option>
@@ -173,17 +173,17 @@
 				<br>
 				<div>
 					<p>Remaining HP</p>
-					<input type="number" value="0" min="0" max="100" id="remhp" onchange="clearRemTime()">%
+					<input type="number" value="0" min="0" max="100" id="remhp">%
 				</div>
 				<div>
 					<p>Remaining Time</p>
-					<input type="number" value="0" min="0" max="180" id="remtime" onchange="clearRemHP()">s
+					<input type="number" value="0" min="0" max="180" id="remtime">s
 				</div>
 			</div>
 			<hr>
 
 			<div class="results">
-				<button type="button" onclick="calcDPS()">Calculate</button>
+				<button id="calculateBtn">Calculate</button>
 				<h2 id="dpsValue">You have reached 0 DPS</h2>
 			</div>
 
@@ -211,11 +211,13 @@
 
 	<script>
 		$(document).ready(function () {
-			$("input[name='job']").change(function () {
-				calcHP();
-			});
-			$(document).on('click', 'input[type=number]', function () { this.select(); });
-		});
+			$("input[name='job']").on("change",calcHP);
+			$("#fight").on("change", calcHP);
+			
+			$("input[type=number]").on("click", function() { this.select()});
+			$("#remhp").on("change", clearRemTime);
+			$("#remtime").on("change", clearRemHP);
+			$("#calculateBtn").on("click", calcDPS);
 
 		var fightId = {
 			"Basic": 0,
@@ -281,11 +283,11 @@
 		var maxTime = 180; //180 seconds max
 
 		function limit(value, min, max) {
-			if (value > max)
-				value = max;
-			if (value < min)
-				value = min;
-			return value;
+			return (value >= max) 
+							? max 
+							: (value < min) 
+									? min 
+									: value;
 		}
 
 		function clearRemTime() {
@@ -298,10 +300,7 @@
 
 		function updateSelected() {
 			klasse = $('input[name="job"]:checked').val();
-
-
 			fight = $("#fight option:selected").val();
-
 		}
 
 		function calcHP() {
@@ -312,20 +311,19 @@
 
 		function calcDPS() {
 			updateSelected();
-			var remHP = $("#remhp").val();
-			var remTime = $("#remtime").val();
+			var remainingHP = parseFloat($("#remhp").val());
+			var remainingTime = parseInt($("#remtime").val(), 10);
 
 			var dpsText = "";
 			if (typeof klasse != 'undefined') {
 
-				remHP = limit(remHP, 0, 100);
-				remTime = limit(remTime, 0, 180);
+				remainingHP = limit(remainingHP, 0, 100);
+				remainingTime = limit(remainingTime, 0, 180);
 				var bossHP = hpData[klasse][fightId[fight]];
 
 				if (bossHP != 0) {
-					var dps = (1 - (remHP * 0.01)) * bossHP / (maxTime - remTime)
+					var dps = (1 - (remainingHP * 0.01)) * bossHP / (maxTime - remainingTime)
 					dpsText = "You have reached: " + dps.toFixed(2).toString() + " DPS";
-
 				} else {
 					dpsText = "No HP values available for " + klasse + " - " + fight;
 				}
@@ -335,6 +333,7 @@
 
 			$("#dpsValue").html(dpsText);
 		}
+		});
 
 	</script>
 </body>
